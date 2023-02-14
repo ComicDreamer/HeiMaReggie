@@ -3,6 +3,7 @@ package cuculi.common;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,7 +12,7 @@ import java.util.Map;
 熟悉泛型的使用
  */
 @Data
-public class R<T> {
+public class R<T> implements Serializable {
 
     //约定编码 1为成功 0或其他数字为失败
     private int code;
@@ -42,4 +43,8 @@ public class R<T> {
     }
 
     //动态数据填充，暂时没写
+//    public R<T> add(String key, Object value) {
+//        this.map.put(key, value);
+//        return this;
+//    }
 }
